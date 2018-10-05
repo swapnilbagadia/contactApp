@@ -1,0 +1,53 @@
+spring:
+    profiles.active: dev
+    application:
+        name: ContactAppService
+
+    datasource:
+            url: jdbc:mysql://uat-db.lendingkart.com:3306/lk_uat?useSSL=false
+            username: lendinguat
+            password: lendingqa#123
+
+    jpa:
+            hibernate:
+                ddl-auto: none
+                naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+            show-sql: true
+
+swagger:
+    enabled: true
+
+
+cors.allow:
+    origins: "*"
+    methods: "*"
+
+# Redis Config
+spring.redis.host: 52.66.168.58
+spring.redis.port: 6379
+spring.redis.password:
+
+spring.redis.lettuce.pool.max-active: 7
+spring.redis.lettuce.pool.max-idle: 7
+spring.redis.lettuce.pool.min-idle: 2
+spring.redis.lettuce.pool.max-wait: -1ms
+spring.redis.lettuce.shutdown-timeout: 200ms
+
+spring.cache.redis.cache-null-values: false
+spring.cache.redis.time-to-live: 900000
+spring.cache.redis.use-key-prefix: true
+
+spring.cache.type: redis
+
+server:
+    port: 9000
+    servlet:
+      context-path: /app
+
+app:
+  secret:
+    value: BA9832AD2A9B79C9A2D4CBCD26C25
+    parameter: appSecret
+
+
+
